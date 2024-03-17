@@ -69,13 +69,13 @@ Route::get('getdata/{id}', function($id){
 Route::get('updatedata/{id}', function(Request $request,$id){
     
     $getData=\App\User::find($id);
-    // $data=[
-    //         'name'=>$request->name,
-    //         'email'=>$request->email,
-    //         'role_id'=>$request->role_id,
-    //         'password'=>Hash::make($request->password),
-    //     ];
-    // $getData->update($data);
+    $data=[
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'role_id'=>$request->role_id,
+            'password'=>Hash::make($request->password),
+        ];
+    $getData->update($data);
     // data($getData);
     return response()->json($getData);
 });

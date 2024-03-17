@@ -25,6 +25,7 @@ Route::group(['middleware'=>['auth','admin']], function(){
     Route::get('admin/dashboard',function(){ 
         return view('admin.dashboard');
     })->name('admin.dashboard');
+    Route::resource('admin/user',UserController::class);
 });
 
 /**********************End Admin Routes****************/
